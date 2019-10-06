@@ -1,0 +1,27 @@
+{
+  "name": "cast-server",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "server": "node ./lib/js/src/Server.bs.js",
+    "server:dev": "nodemon ./lib/js/src/Server.bs.js",
+    "chromecast": "nodemon ./src/chrome.js"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^5.0.6"
+  },
+  "dependencies": {
+    "@ahrefs/bs-dotenv": "^2.0.0",
+    "@glennsl/bs-json": "^5.0.1",
+    "bs-express": "^0.12.1",
+    "chromecast-player-reloaded": "^1.1.0",
+    "dotenv": "^8.1.0"
+  }
+}
