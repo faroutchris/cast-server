@@ -1,6 +1,6 @@
-# Basic Reason Template
+# Cast server
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+Hello! This project allows you to run a dedicated chromecast server on a local machine,
 
 # Build
 
@@ -12,13 +12,19 @@ npm run build
 
 ```
 npm run start
+npm run server:dev
 ```
 
-# Editor
+# Serve
 
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+```
+npm run server
+```
 
-Useful repos
+## Useful repos
+
 https://github.com/mafintosh/torrent-stream
+
 https://github.com/xat/chromecast-player
+
 https://github.com/xat/castnow/blob/master/index.js
