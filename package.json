@@ -6,8 +6,8 @@
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "server": "node ./lib/js/src/Server.bs.js",
-    "server:dev": "nodemon ./lib/js/src/Server.bs.js",
-    "chromecast": "nodemon ./src/chrome.js"
+    "server:dev": "./node_modules/nodemon/bin/nodemon.js ./lib/js/src/Server.bs.js",
+    "chromecast": "./node_modules/nodemon/bin/nodemon.js ./src/chrome.js"
   },
   "keywords": [
     "BuckleScript"
@@ -15,7 +15,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^5.0.6"
+    "bs-platform": "^5.0.6",
+    "nodemon": "^1.19.3"
   },
   "dependencies": {
     "@ahrefs/bs-dotenv": "^2.0.0",

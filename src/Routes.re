@@ -14,8 +14,6 @@ module IndexRoute = {
 };
 
 module CommandRoute = {
-  open Common;
-
   let make =
     PromiseMiddleware.from((_next, req, res) =>
       switch (req |> Request.bodyJSON) {
@@ -26,21 +24,22 @@ module CommandRoute = {
 
         switch (command) {
         | "launch" =>
-          Chromecast.launchPlayer(
-            payload,
-            cb(
-              fun
-              | Error(e) => Js.log(e)
-              | Ok(p) => Js.log2("--->", p),
-            ),
-          )
-        | "play"
+          Dummycast.promisifiedLaunch(payload)
+          |> Js.Promise.then_(result => {
+               switch (result) {
+               | Belt.Result.Error(e) => Js.log2("-->", e)
+               | Ok(res) => Js.log2("-->", res)
+               };
+               Js.Promise.resolve();
+             })
+          |> ignore
+
         | "pause"
         | "stop"
         | "mute"
         | "unmute"
         | "setVolume"
-        | _ => Js.Exn.raiseError("Unknown command")
+        | _ => Js.Promise.resolve() |> ignore
         };
 
         res |> successResponse() |> resolve;
