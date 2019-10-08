@@ -28,3 +28,5 @@ https://github.com/mafintosh/torrent-stream
 https://github.com/xat/chromecast-player
 
 https://github.com/xat/castnow/blob/master/index.js
+
+https://gist.github.com/xat/9ccf5eab2d0adb34fe8d
